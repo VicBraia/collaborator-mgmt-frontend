@@ -1,1 +1,23 @@
-<p>home works!</p>
+<div class="container-fluid">
+  <div class="greetings">
+    <p>
+      Bem-vindx ao <b>Gestão de Colaboradores</b>, um teste técnico feito com muito carinho!
+    </p>
+    <p>
+      Aqui, você pode gerenciar colaboradores e os seus respectivos setores ;)
+    </p>
+  </div>
+
+  <div class="menu-wrapper row">
+    <button class="menu-option collaborators" (click)="redirect('collaborators')">
+      <div class="overlay">
+        <h5>COLABORADORES</h5>
+      </div>
+    </button>
+    <button class="menu-option sectors" (click)="redirect('sectors')">
+      <div class="overlay">
+        <h5>SETORES</h5>
+      </div>
+    </button>
+  </div>
+</div>

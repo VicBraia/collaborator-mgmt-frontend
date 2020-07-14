@@ -1,0 +1,10 @@
+<div class="container-fluid">
+  <app-navigation-option [path]="''"></app-navigation-option>
+  <h1>Setores</h1>
+  <div class="options-wrapper row">
+    <input matInput class="col-9" type="text" placeholder="Buscar..." (keyup)="searchThis($event)">
+    <button class="round-button col-2" (click)="redirectTo('sectors/add')">Adicionar</button>
+  </div>
+  <app-custom-sectors-list *ngIf="filteredSectorsList.length > 0" [sectorList]="filteredSectorsList"></app-custom-sectors-list>
+  <div *ngIf="filteredSectorsList.length == 0"><p>Nenhum resultado encontrado :(</p></div>
+</div>

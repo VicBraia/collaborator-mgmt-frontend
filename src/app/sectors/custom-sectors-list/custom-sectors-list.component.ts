@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit,} from '@angular/core';
+import {SectorsModel} from "../sectors.model";
 
 @Component({
   selector: 'app-custom-sectors-list',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomSectorsListComponent implements OnInit {
 
+  @Input() sectorList: SectorsModel[];
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.sectorList)
   }
 
 }

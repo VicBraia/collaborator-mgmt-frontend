@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <app-navigation-option [path]="'/sectors'"></app-navigation-option>
+  <h3>Adicionar Setor</h3>
+  <form [formGroup]="form">
+    <label>Nome</label>
+    <input class="form-control" type="text" formControlName="name">
+    <div class="buttons-wrapper row justify-content-end">
+      <button class="round-button grey col-2" [routerLink]="['/sectors']">Cancelar</button>
+      <button class="round-button blue col-2" (click)="onSubmit()">Adicionar</button>
+    </div>
+  </form>
+</div>

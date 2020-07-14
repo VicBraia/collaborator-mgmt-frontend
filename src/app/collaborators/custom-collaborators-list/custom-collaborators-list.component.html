@@ -1,0 +1,38 @@
+<div class="custom-list" *ngFor="let collaborator of collaboratorsList">
+  <div class="card row justify-content-between">
+    <div class="col-6">
+      <h5>{{collaborator.name}}</h5>
+      <h6>{{collaborator.cpf}}</h6>
+      <h6>{{collaborator.email}}</h6>
+      {{collaborator.dateOfBirth | date: 'dd/MM/yyyy'}}
+    </div>
+    <div class="col-4">
+      <div class="options">
+        <a [routerLink]="['/collaborator/edit/'+ collaborator.id]">
+          <img src="assets/icons/edit.svg">
+        </a>
+        <a (click)="openConfirmationModal(content, collaborator.id)">
+          <img src="assets/icons/delete.svg">
+        </a>
+      </div>
+      <h6 class="sector">{{getSectorName(collaborator.sectorId)}}</h6>
+      <h6>{{collaborator.age}} anos</h6>
+    </div>
+  </div>
+</div>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Deletar colaborador</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Tem certeza que deseja excluir este colaborador?
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="round-button grey col-2" (click)="modal.close(false)">Não</button>
+    <button type="button" class="round-button blue col-2" (click)="modal.close(true)">Sim</button>
+  </div>
+</ng-template>
+

@@ -1,0 +1,38 @@
+.card{
+  background-color: var(--light);
+  padding: 1vw;
+  margin-bottom: 2vh;
+  flex-direction: row;
+  .col-6, .col-4{
+    padding: 0px;
+  }
+  .col-4{
+    text-align: right;
+  }
+  h4{
+    margin-bottom: 1vh;
+  }
+  h5{
+    margin-top: 0.5vh;
+  }
+  .sector{
+    color: var(--green);
+  }
+  .options{
+    margin-bottom: 1vh;
+    img{
+      cursor: pointer;
+      height: 2.5vh;
+      margin-left: 1.5vh;
+    }
+  }
+}
+button{
+  margin-left: 2vh;
+}
+button.blue{
+  background-color: var(--lightBlue);
+}
+button.grey{
+  background-color: var(--dark);
+}

@@ -1,0 +1,43 @@
+.greetings{
+  font-family: Poppins-Light, sans-serif;
+  color: var(--dark);
+}
+
+.menu-wrapper{
+  padding-top: 4vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+.collaborators{
+  background-image: url("../../assets/pictures/collaborators.jpg");
+}
+.sectors{
+  background-image: url("../../assets/pictures/sectors.jpg");
+}
+
+button{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 24vw;
+  width: 24vw;
+  border: none;
+  padding: 0px;
+  cursor: pointer;
+  -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.4);
+  box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.4);
+  .overlay{
+    background: rgb(79,113,190);
+    background: linear-gradient(90deg, rgba(79,113,190,0.4) 0%, rgba(226,111,44,0.4) 78%);
+    height: inherit;
+    width: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  h5{
+    color: var(--light);
+  }
+}

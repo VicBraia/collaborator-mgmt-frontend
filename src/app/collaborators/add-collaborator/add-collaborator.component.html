@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <app-navigation-option [path]="'/collaborators'"></app-navigation-option>
+  <h3>Adicionar colaborador</h3>
+  <form [formGroup]="form">
+      <label>Nome</label>
+      <input class="form-control" type="text" formControlName="name">
+      <label>CPF</label>
+      <input class="form-control" type="text" formControlName="cpf">
+      <label>E-mail</label>
+      <input class="form-control" type="email" formControlName="email">
+      <div class="row justify-content-between">
+        <div class="col-5">
+          <label>Número de telefone</label>
+          <input class="form-control" type="tel" formControlName="telephone">
+        </div>
+        <div class="col-5">
+          <label>Data de Nascimento</label>
+          <input class="form-control" type="date" formControlName="dateOfBirth">
+        </div>
+      </div>
+    <div class="buttons-wrapper row justify-content-end">
+      <button class="round-button grey col-2" [routerLink]="['/collaborators']">Cancelar</button>
+      <button class="round-button blue col-2" (click)="onSubmit()">Adicionar</button>
+    </div>
+  </form>
+</div>
