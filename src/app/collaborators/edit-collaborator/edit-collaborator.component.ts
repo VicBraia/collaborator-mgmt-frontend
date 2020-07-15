@@ -17,6 +17,7 @@ export class EditCollaboratorComponent implements OnInit {
   sectorsList: SectorsModel[] = [];
   id: number;
   sub: any;
+  showErrorMessage: boolean = false;
   collaborator: CollaboratorsModel = {
     age: 0,
     cpf: "",
@@ -57,11 +58,11 @@ export class EditCollaboratorComponent implements OnInit {
       }),
       cpf: new FormControl(this.collaborator.cpf, {
         updateOn: 'change',
-        validators: [Validators.required, Validators.maxLength(11), Validators.minLength(11)]
+        validators: [Validators.required, Validators.minLength(11), Validators.maxLength(11),  Validators.pattern("^[0-9]*$")]
       }),
       telephone: new FormControl(this.collaborator.phone, {
         updateOn: 'change',
-        validators: [Validators.required]
+        validators: [Validators.required, Validators.pattern("^[0-9]*$")]
       }),
       dateOfBirth: new FormControl(dp.transform(this.collaborator.dateOfBirth, 'dd/MM/yyyy'), {
         updateOn: 'change',
@@ -110,14 +111,32 @@ export class EditCollaboratorComponent implements OnInit {
     return this.form.value.dateOfBirth == '';
   }
 
+  get email() {
+    return this.form.get('email');
+  }
+
+  get cpf() {
+    return this.form.get('cpf');
+  }
+
+  get phone(){
+    return this.form.get('telephone');
+  }
+
   onSubmit(){
-    this.collaborator.name = this.form.value.name;
-    this.collaborator.cpf = this.form.value.cpf;
-    this.collaborator.email = this.form.value.email;
-    this.collaborator.dateOfBirth = this.form.value.dateOfBirth;
-    this.collaborator.phone = this.form.value.telephone;
-    this.collaboratorsService.put(this.collaborator)
-    this.router.navigate(['/collaborators']);
+    if(this.form.status != 'INVALID'){
+      this.collaborator.name = this.form.value.name;
+      this.collaborator.cpf = this.form.value.cpf;
+      this.collaborator.email = this.form.value.email;
+      this.collaborator.dateOfBirth = this.form.value.dateOfBirth;
+      this.collaborator.phone = this.form.value.telephone;
+      this.collaborator.sectorId = this.form.value.sectorId;
+      this.collaboratorsService.put(this.collaborator)
+      this.router.navigate(['/collaborators']);
+    }
+    else{
+      this.showErrorMessage = true;
+    }
   }
 
 }

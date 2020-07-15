@@ -6,10 +6,6 @@ h3{
   padding: 4vh 0px;
 }
 
-.form-control{
-  margin-bottom: 2vh;
-}
-
 .buttons-wrapper{
   margin-top: 6vh;
   button{
@@ -23,3 +19,12 @@ h3{
   }
 }
 
+.error-message{
+  color: var(--red);
+  font-family: Poppins-Regular, sans-serif;
+  font-size: 1.5vh;
+}
+
+.invalid-answer{
+  border: var(--red) 1px solid;
+}

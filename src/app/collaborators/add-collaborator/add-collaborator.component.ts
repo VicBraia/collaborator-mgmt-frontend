@@ -14,6 +14,7 @@ import {SectorsModel} from "../../sectors/sectors.model";
 export class AddCollaboratorComponent implements OnInit {
   form: FormGroup;
   sectorsList: SectorsModel[] = [];
+  showErrorMessage: boolean = false;
   newCollaborator: CollaboratorsModel = {
     age: 0,
     cpf: "",
@@ -43,11 +44,11 @@ export class AddCollaboratorComponent implements OnInit {
       }),
       cpf: new FormControl(null, {
         updateOn: 'change',
-        validators: [Validators.required]
+        validators: [Validators.required, Validators.minLength(11), Validators.maxLength(11),  Validators.pattern("^[0-9]*$")],
       }),
       telephone: new FormControl(null, {
         updateOn: 'change',
-        validators: [Validators.required]
+        validators: [Validators.required, Validators.pattern("^[0-9]*$")]
       }),
       dateOfBirth: new FormControl(null, {
         updateOn: 'change',
@@ -55,9 +56,9 @@ export class AddCollaboratorComponent implements OnInit {
       }),
       email: new FormControl(null, {
         updateOn: 'change',
-        validators: [Validators.required]
+        validators: [Validators.required, Validators.email]
       }),
-      sectorId: new FormControl(null, {
+      sectorId: new FormControl(1, {
         updateOn: 'change',
         validators: [Validators.required]
       })
@@ -80,7 +81,7 @@ export class AddCollaboratorComponent implements OnInit {
   }
 
   isSectorFull(){
-    return false;
+     return false;
   }
 
   isNameEmpty(){
@@ -103,13 +104,31 @@ export class AddCollaboratorComponent implements OnInit {
     return this.form.value.dateOfBirth == '';
   }
 
+  get email() {
+    return this.form.get('email');
+  }
+
+  get cpf() {
+    return this.form.get('cpf');
+  }
+
+  get phone(){
+    return this.form.get('telephone');
+  }
+
   onSubmit(){
-    this.newCollaborator.name = this.form.value.name;
-    this.newCollaborator.cpf = this.form.value.cpf;
-    this.newCollaborator.email = this.form.value.email;
-    this.newCollaborator.dateOfBirth = this.form.value.dateOfBirth;
-    this.newCollaborator.phone = this.form.value.telephone;
-    this.collaboratorService.post(this.newCollaborator)
-    this.router.navigate(['/collaborators']);
+    if(this.form.status != 'INVALID'){
+      this.newCollaborator.name = this.form.value.name;
+      this.newCollaborator.cpf = this.form.value.cpf;
+      this.newCollaborator.email = this.form.value.email;
+      this.newCollaborator.dateOfBirth = this.form.value.dateOfBirth;
+      this.newCollaborator.phone = this.form.value.telephone;
+      this.newCollaborator.sectorId = this.form.value.sectorId;
+      this.collaboratorService.post(this.newCollaborator)
+      this.router.navigate(['/collaborators']);
+    }
+    else{
+      this.showErrorMessage = true;
+    }
   }
 }

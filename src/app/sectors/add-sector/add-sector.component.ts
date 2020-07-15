@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {SectorsModel} from "../sectors.model";
 import {Router} from "@angular/router";
@@ -12,8 +12,11 @@ import {SectorsService} from "../sectors.service";
 export class AddSectorComponent implements OnInit {
 
   form: FormGroup;
+  showErrorMessage: boolean = false;
   newSector: SectorsModel = {id: 0, name: ""};
-  constructor(private router: Router, private sectorsService: SectorsService) { }
+
+  constructor(private router: Router, private sectorsService: SectorsService) {
+  }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -23,10 +26,16 @@ export class AddSectorComponent implements OnInit {
       })
     })
   }
-  onSubmit(){
-    this.newSector.name = this.form.value.name;
-    this.sectorsService.post(this.newSector)
-    this.router.navigate(['/sectors']);
+
+  onSubmit() {
+    if (this.form.status != 'INVALID') {
+      this.newSector.name = this.form.value.name;
+      this.sectorsService.post(this.newSector)
+      this.router.navigate(['/sectors']);
+    }
+    else{
+      this.showErrorMessage = true;
+    }
   }
 
 }

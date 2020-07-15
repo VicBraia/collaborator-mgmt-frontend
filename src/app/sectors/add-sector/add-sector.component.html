@@ -3,7 +3,8 @@
   <h3>Adicionar Setor</h3>
   <form [formGroup]="form">
     <label>Nome</label>
-    <input class="form-control" type="text" formControlName="name">
+    <input class="form-control" [ngClass]="{'invalid-answer': showErrorMessage}" type="text" formControlName="name">
+    <div class="error-message" *ngIf="showErrorMessage">Esse campo é obrigatório!</div>
     <div class="buttons-wrapper row justify-content-end">
       <button class="round-button grey col-2" [routerLink]="['/sectors']">Cancelar</button>
       <button class="round-button blue col-2" (click)="onSubmit()">Adicionar</button>
