@@ -19,6 +19,10 @@ export class CollaboratorsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.subscribeVariables();
+  }
+
+  subscribeVariables(){
     this.collaboratorsList = this.collaboratorService.getAll();
     this.filteredCollaboratorsList = this.collaboratorsList;
     this.collaboratorService.observableCollaboratorsList.subscribe(collaborators => {

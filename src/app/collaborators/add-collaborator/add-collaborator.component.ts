@@ -3,6 +3,8 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {CollaboratorsModel} from "../collaborators.model";
 import {CollaboratorsService} from "../collaborators.service";
 import {Router} from "@angular/router";
+import {SectorsService} from "../../sectors/sectors.service";
+import {SectorsModel} from "../../sectors/sectors.model";
 
 @Component({
   selector: 'app-add-component',
@@ -11,13 +13,28 @@ import {Router} from "@angular/router";
 })
 export class AddCollaboratorComponent implements OnInit {
   form: FormGroup;
-  newCollaborator: CollaboratorsModel = {age: 0, cpf: "", dateOfBirth: undefined, email: "", id: 0, name: "", phone: ""};
+  sectorsList: SectorsModel[] = [];
+  newCollaborator: CollaboratorsModel = {
+    age: 0,
+    cpf: "",
+    dateOfBirth: undefined,
+    email: "",
+    id: 0,
+    name: "",
+    phone: "",
+    sectorId: 0
+  }
 
-  constructor(private collaboratorService: CollaboratorsService, private router: Router) { }
+  constructor(private collaboratorService: CollaboratorsService, private sectorService: SectorsService, private router: Router) { }
 
   //TODO validate fields
   //TODO format date
   ngOnInit(): void {
+    this.subscribe();
+    this.initializeForm();
+  }
+
+  initializeForm(){
     this.form = new FormGroup({
       name: new FormControl(null, {
         updateOn: 'blur',
@@ -39,7 +56,30 @@ export class AddCollaboratorComponent implements OnInit {
         updateOn: 'blur',
         validators: [Validators.required]
       }),
+      sectorId: new FormControl(null, {
+        updateOn: 'change',
+        validators: [Validators.required]
+      })
     })
+  }
+
+  subscribe(){
+    this.sectorsList = this.sectorService.getAll();
+    this.sectorService.observableSectorsList.subscribe(sectors => {
+      this.sectorsList = sectors;
+    })
+  }
+
+  setSector(data){
+    this.newCollaborator.sectorId = this.sectorsList[data.target.selectedIndex].id;
+  }
+
+  isBlacklistMember(){
+    return false;
+  }
+
+  isSectorFull(){
+    return false;
   }
 
   onSubmit(){

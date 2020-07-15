@@ -3,7 +3,8 @@
   <h3>Editar colaborador</h3>
   <form [formGroup]="form" #f="ngForm">
     <label>Nome</label>
-    <input class="form-control" type="text" formControlName="name">
+    <input class="form-control" [ngClass]="{'invalid-answer': isBlacklistMember()}" type="text" formControlName="name">
+    <div class="error-message" *ngIf="isBlacklistMember()">Essa pessoa está na Blacklist e não pode ser adicionada como colaborx. :(</div>
     <label>CPF</label>
     <input class="form-control" type="text" formControlName="cpf">
     <label>E-mail</label>
@@ -18,6 +19,11 @@
         <input class="form-control" type="date" value="{{collaborator.dateOfBirth}}" formControlName="dateOfBirth" [required]="true">
       </div>
     </div>
+    <label>Setor</label>
+    <select class="form-control" [ngClass]="{'invalid-answer': isSectorFull()}" formControlName="sectorId" (change)="setSector($event)">
+      <option *ngFor="let sector of sectorsList" [ngValue]="sector.id">{{sector.name}}</option>
+    </select>
+    <div class="error-message" *ngIf="isSectorFull()">Essa pessoa não pode ser associada a este setor... </div>
     <div class="buttons-wrapper row justify-content-end">
       <button class="round-button grey col-2" [routerLink]="['/collaborators']">Cancelar</button>
       <button class="round-button blue col-2" (click)="onSubmit()">Concluir</button>

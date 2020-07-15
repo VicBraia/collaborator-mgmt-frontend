@@ -2,8 +2,8 @@
   <app-navigation-option [path]="''"></app-navigation-option>
   <h3>Colaboradores</h3>
   <div class="options-wrapper row">
-    <input matInput class="col-9" type="text" placeholder="Buscar..." (keyup)="searchThis($event)">
-    <button class="round-button col-2" (click)="redirectTo('collaborator/add')">Adicionar</button>
+    <input matInput class="col-8" type="text" placeholder="Buscar..." (keyup)="searchThis($event)">
+    <button class="round-button col-3" (click)="redirectTo('collaborator/add')">Adicionar</button>
   </div>
   <app-custom-collaborators-list *ngIf="filteredCollaboratorsList.length > 0" (deleteIndex)="onDeleteCollaborator($event)" [collaboratorsList]="filteredCollaboratorsList" [sectorsList]="sectorsList"></app-custom-collaborators-list>
   <div *ngIf="filteredCollaboratorsList.length == 0"><p>Nenhum resultado encontrado :(</p></div>

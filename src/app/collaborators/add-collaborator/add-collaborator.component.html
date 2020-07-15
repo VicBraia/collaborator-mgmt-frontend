@@ -2,22 +2,28 @@
   <app-navigation-option [path]="'/collaborators'"></app-navigation-option>
   <h3>Adicionar colaborador</h3>
   <form [formGroup]="form">
-      <label>Nome</label>
-      <input class="form-control" type="text" formControlName="name">
-      <label>CPF</label>
-      <input class="form-control" type="text" formControlName="cpf">
-      <label>E-mail</label>
-      <input class="form-control" type="email" formControlName="email">
-      <div class="row justify-content-between">
-        <div class="col-5">
-          <label>Número de telefone</label>
-          <input class="form-control" type="tel" formControlName="telephone">
-        </div>
-        <div class="col-5">
-          <label>Data de Nascimento</label>
-          <input class="form-control" type="date" formControlName="dateOfBirth">
-        </div>
+    <label>Nome</label>
+    <input class="form-control" [ngClass]="{'invalid-answer': isBlacklistMember()}" type="text" formControlName="name">
+    <div class="error-message" *ngIf="isBlacklistMember()">Essa pessoa está na Blacklist e não pode ser adicionada como colaborx. :(</div>
+    <label>CPF</label>
+    <input class="form-control" type="text" formControlName="cpf">
+    <label>E-mail</label>
+    <input class="form-control" type="email" formControlName="email">
+    <div class="row justify-content-between">
+      <div class="col-5">
+        <label>Número de telefone</label>
+        <input class="form-control" type="tel" formControlName="telephone">
       </div>
+      <div class="col-5">
+        <label>Data de Nascimento</label>
+        <input class="form-control" type="date" formControlName="dateOfBirth">
+      </div>
+    </div>
+    <label>Setor</label>
+    <select class="form-control" [ngClass]="{'invalid-answer': isSectorFull()}" formControlName="sectorId" (change)="setSector($event)">
+      <option *ngFor="let sector of sectorsList" [ngValue]="sector.id">{{sector.name}}</option>
+    </select>
+    <div class="error-message" *ngIf="isSectorFull()">Essa pessoa não pode ser associada a este setor... </div>
     <div class="buttons-wrapper row justify-content-end">
       <button class="round-button grey col-2" [routerLink]="['/collaborators']">Cancelar</button>
       <button class="round-button blue col-2" (click)="onSubmit()">Adicionar</button>

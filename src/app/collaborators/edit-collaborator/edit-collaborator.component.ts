@@ -1,9 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators, NgForm} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {CollaboratorsModel} from "../collaborators.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {CollaboratorsService} from "../collaborators.service";
 import {DatePipe} from '@angular/common'
+import {SectorsModel} from "../../sectors/sectors.model";
+import {SectorsService} from "../../sectors/sectors.service";
 
 
 @Component({
@@ -13,6 +15,9 @@ import {DatePipe} from '@angular/common'
 })
 export class EditCollaboratorComponent implements OnInit {
   form: FormGroup;
+  sectorsList: SectorsModel[] = [];
+  id: number;
+  sub: any;
   collaborator: CollaboratorsModel = {
     age: 0,
     cpf: "",
@@ -23,17 +28,28 @@ export class EditCollaboratorComponent implements OnInit {
     phone: "",
     sectorId: 0
   };
-  id: number;
-  sub: any;
-  constructor(private router: Router, private route: ActivatedRoute, private collaboratorsService: CollaboratorsService) { }
+
+  constructor(private router: Router, private route: ActivatedRoute, private collaboratorsService: CollaboratorsService, private sectorService: SectorsService) { }
 
   //TODO pre-fill date of birth
   //TODO validate fields
   ngOnInit(): void {
+    this.subscribe();
+    this.initializeForm();
+  }
+
+  subscribe(){
     this.sub = this.route.params.subscribe(params => {
       this.id = +params['id'];
       this.collaborator = this.collaboratorsService.getById(this.id);
     });
+    this.sectorsList = this.sectorService.getAll();
+    this.sectorService.observableSectorsList.subscribe(sectors => {
+      this.sectorsList = sectors;
+    })
+  }
+
+  initializeForm(){
     let dp = new DatePipe('pt');
     this.form = new FormGroup({
       name: new FormControl(this.collaborator.name, {
@@ -56,7 +72,23 @@ export class EditCollaboratorComponent implements OnInit {
         updateOn: 'blur',
         validators: [Validators.required, Validators.email]
       }),
+      sectorId: new FormControl(this.collaborator.sectorId, {
+        updateOn: 'change',
+        validators: [Validators.required]
+      })
     })
+  }
+
+  setSector(data){
+    this.collaborator.sectorId = this.sectorsList[data.target.selectedIndex].id;
+  }
+
+  isBlacklistMember(){
+    return true;
+  }
+
+  isSectorFull(){
+    return true;
   }
 
   onSubmit(){
