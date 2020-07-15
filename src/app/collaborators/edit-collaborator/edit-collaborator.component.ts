@@ -7,7 +7,6 @@ import {DatePipe} from '@angular/common'
 import {SectorsModel} from "../../sectors/sectors.model";
 import {SectorsService} from "../../sectors/sectors.service";
 
-
 @Component({
   selector: 'app-edit-collaborator',
   templateUrl: './edit-collaborator.component.html',
@@ -53,23 +52,23 @@ export class EditCollaboratorComponent implements OnInit {
     let dp = new DatePipe('pt');
     this.form = new FormGroup({
       name: new FormControl(this.collaborator.name, {
-        updateOn: 'blur',
+        updateOn: 'change',
         validators: [Validators.required]
       }),
       cpf: new FormControl(this.collaborator.cpf, {
-        updateOn: 'blur',
+        updateOn: 'change',
         validators: [Validators.required, Validators.maxLength(11), Validators.minLength(11)]
       }),
       telephone: new FormControl(this.collaborator.phone, {
-        updateOn: 'blur',
+        updateOn: 'change',
         validators: [Validators.required]
       }),
       dateOfBirth: new FormControl(dp.transform(this.collaborator.dateOfBirth, 'dd/MM/yyyy'), {
-        updateOn: 'blur',
+        updateOn: 'change',
         validators: [Validators.required]
       }),
       email: new FormControl(this.collaborator.email, {
-        updateOn: 'blur',
+        updateOn: 'change',
         validators: [Validators.required, Validators.email]
       }),
       sectorId: new FormControl(this.collaborator.sectorId, {
@@ -84,11 +83,31 @@ export class EditCollaboratorComponent implements OnInit {
   }
 
   isBlacklistMember(){
-    return true;
+    return false;
   }
 
   isSectorFull(){
-    return true;
+    return false;
+  }
+
+  isNameEmpty(){
+    return this.form.value.name == '';
+  }
+
+  isCpfEmpty(){
+    return this.form.value.cpf == '';
+  }
+
+  isEmailEmpty(){
+    return this.form.value.email == '';
+  }
+
+  isPhoneEmpty(){
+    return this.form.value.telephone == '';
+  }
+
+  isDateEmpty(){
+    return this.form.value.dateOfBirth == '';
   }
 
   onSubmit(){

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {FormControl, FormGroup, Validators, NgForm} from "@angular/forms";
 import {CollaboratorsModel} from "../collaborators.model";
 import {CollaboratorsService} from "../collaborators.service";
 import {Router} from "@angular/router";
@@ -22,8 +22,9 @@ export class AddCollaboratorComponent implements OnInit {
     id: 0,
     name: "",
     phone: "",
-    sectorId: 0
+    sectorId: -1
   }
+  @ViewChild('f') f = NgForm;
 
   constructor(private collaboratorService: CollaboratorsService, private sectorService: SectorsService, private router: Router) { }
 
@@ -37,23 +38,23 @@ export class AddCollaboratorComponent implements OnInit {
   initializeForm(){
     this.form = new FormGroup({
       name: new FormControl(null, {
-        updateOn: 'blur',
+        updateOn: 'change',
         validators: [Validators.required]
       }),
       cpf: new FormControl(null, {
-        updateOn: 'blur',
+        updateOn: 'change',
         validators: [Validators.required]
       }),
       telephone: new FormControl(null, {
-        updateOn: 'blur',
+        updateOn: 'change',
         validators: [Validators.required]
       }),
       dateOfBirth: new FormControl(null, {
-        updateOn: 'blur',
+        updateOn: 'change',
         validators: [Validators.required]
       }),
       email: new FormControl(null, {
-        updateOn: 'blur',
+        updateOn: 'change',
         validators: [Validators.required]
       }),
       sectorId: new FormControl(null, {
@@ -80,6 +81,26 @@ export class AddCollaboratorComponent implements OnInit {
 
   isSectorFull(){
     return false;
+  }
+
+  isNameEmpty(){
+    return this.form.value.name == '';
+  }
+
+  isCpfEmpty(){
+    return this.form.value.cpf == '';
+  }
+
+  isEmailEmpty(){
+    return this.form.value.email == '';
+  }
+
+  isPhoneEmpty(){
+    return this.form.value.telephone == '';
+  }
+
+  isDateEmpty(){
+    return this.form.value.dateOfBirth == '';
   }
 
   onSubmit(){
