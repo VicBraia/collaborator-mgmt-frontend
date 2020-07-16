@@ -1,0 +1,1484 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>mobicare-test documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">mobicare-test documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>AddCollaboratorComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/collaborators/add-collaborator/add-collaborator.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Component for adding new collaborators</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-add-component</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./add-collaborator.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./add-collaborator.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#f">f</a>
+                            </li>
+                            <li>
+                                <a href="#form">form</a>
+                            </li>
+                            <li>
+                                <a href="#newCollaborator">newCollaborator</a>
+                            </li>
+                            <li>
+                                <a href="#sectorsList">sectorsList</a>
+                            </li>
+                            <li>
+                                <a href="#showErrorMessage">showErrorMessage</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#initializeForm">initializeForm</a>
+                            </li>
+                            <li>
+                                <a href="#isBlacklistMember">isBlacklistMember</a>
+                            </li>
+                            <li>
+                                <a href="#isCpfEmpty">isCpfEmpty</a>
+                            </li>
+                            <li>
+                                <a href="#isDateEmpty">isDateEmpty</a>
+                            </li>
+                            <li>
+                                <a href="#isEmailEmpty">isEmailEmpty</a>
+                            </li>
+                            <li>
+                                <a href="#isNameEmpty">isNameEmpty</a>
+                            </li>
+                            <li>
+                                <a href="#isPhoneEmpty">isPhoneEmpty</a>
+                            </li>
+                            <li>
+                                <a href="#isSectorFull">isSectorFull</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSubmit">onSubmit</a>
+                            </li>
+                            <li>
+                                <a href="#setSector">setSector</a>
+                            </li>
+                            <li>
+                                <a href="#subscribe">subscribe</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#email">email</a>
+                                </li>
+                                <li>
+                                    <a href="#cpf">cpf</a>
+                                </li>
+                                <li>
+                                    <a href="#phone">phone</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(collaboratorService: <a href="../injectables/CollaboratorsService.html">CollaboratorsService</a>, sectorService: <a href="../injectables/SectorsService.html">SectorsService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/collaborators/add-collaborator/add-collaborator.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>collaboratorService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CollaboratorsService.html" target="_self" >CollaboratorsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>sectorService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SectorsService.html" target="_self" >SectorsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initializeForm"></a>
+                    <span class="name">
+                        <b>
+                            initializeForm
+                        </b>
+                        <a href="#initializeForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>initializeForm()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/collaborators/add-collaborator/add-collaborator.component.ts:44</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Initializes the reactive form with all inputs necessary to create a new collaborator and defines the Validators</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isBlacklistMember"></a>
+                    <span class="name">
+                        <b>
+                            isBlacklistMember
+                        </b>
+                        <a href="#isBlacklistMember"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isBlacklistMember()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="94"
+                            class="link-to-prism">src/app/collaborators/add-collaborator/add-collaborator.component.ts:94</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method that checks if Collaborators API&#39;s response indicates that the collaborator could not be added because they are in the blacklist.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isCpfEmpty"></a>
+                    <span class="name">
+                        <b>
+                            isCpfEmpty
+                        </b>
+                        <a href="#isCpfEmpty"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isCpfEmpty()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="115"
+                            class="link-to-prism">src/app/collaborators/add-collaborator/add-collaborator.component.ts:115</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method that checks if cpf field was filled out for field validation</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isDateEmpty"></a>
+                    <span class="name">
+                        <b>
+                            isDateEmpty
+                        </b>
+                        <a href="#isDateEmpty"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isDateEmpty()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="136"
+                            class="link-to-prism">src/app/collaborators/add-collaborator/add-collaborator.component.ts:136</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method that checks if date field was filled out for field validation</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isEmailEmpty"></a>
+                    <span class="name">
+                        <b>
+                            isEmailEmpty
+                        </b>
+                        <a href="#isEmailEmpty"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isEmailEmpty()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="122"
+                            class="link-to-prism">src/app/collaborators/add-collaborator/add-collaborator.component.ts:122</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method that checks if email field was filled out for field validation</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isNameEmpty"></a>
+                    <span class="name">
+                        <b>
+                            isNameEmpty
+                        </b>
+                        <a href="#isNameEmpty"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isNameEmpty()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="108"
+                            class="link-to-prism">src/app/collaborators/add-collaborator/add-collaborator.component.ts:108</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method that checks if name field was filled out for field validation</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isPhoneEmpty"></a>
+                    <span class="name">
+                        <b>
+                            isPhoneEmpty
+                        </b>
+                        <a href="#isPhoneEmpty"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isPhoneEmpty()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="129"
+                            class="link-to-prism">src/app/collaborators/add-collaborator/add-collaborator.component.ts:129</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method that checks if phone field was filled out for field validation</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isSectorFull"></a>
+                    <span class="name">
+                        <b>
+                            isSectorFull
+                        </b>
+                        <a href="#isSectorFull"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isSectorFull()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="101"
+                            class="link-to-prism">src/app/collaborators/add-collaborator/add-collaborator.component.ts:101</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method that checks if Collaborators API&#39;s response indicates that the collaborator could not be added because their sector&#39;s age range proportion limit.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/collaborators/add-collaborator/add-collaborator.component.ts:36</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                        <b>
+                            onSubmit
+                        </b>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSubmit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="164"
+                            class="link-to-prism">src/app/collaborators/add-collaborator/add-collaborator.component.ts:164</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method triggered by the button &quot;Adicionar&quot; that further checks if form is valid. If it is, it calls the collaboratorsService to post the new Collaborator. If not, it sets a flag that will make visible an error message on the form.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setSector"></a>
+                    <span class="name">
+                        <b>
+                            setSector
+                        </b>
+                        <a href="#setSector"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setSector(data)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="87"
+                            class="link-to-prism">src/app/collaborators/add-collaborator/add-collaborator.component.ts:87</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method that sets the id of the chosen sector in the select menu as the value of the sectorId of the new collaborator. Method triggered by change event.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>receives $event with all info on the formControl for the select menu</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="subscribe"></a>
+                    <span class="name">
+                        <b>
+                            subscribe
+                        </b>
+                        <a href="#subscribe"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>subscribe()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/collaborators/add-collaborator/add-collaborator.component.ts:76</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method to create subscription to observable variables from SectorsService to always keep the data shown in the view up-to-date</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="f"></a>
+                        <span class="name">
+                            <b>
+                            f</b>
+                            <a href="#f"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>NgForm</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;f&#x27;)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/collaborators/add-collaborator/add-collaborator.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="form"></a>
+                        <span class="name">
+                            <b>
+                            form</b>
+                            <a href="#form"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/collaborators/add-collaborator/add-collaborator.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="newCollaborator"></a>
+                        <span class="name">
+                            <b>
+                            newCollaborator</b>
+                            <a href="#newCollaborator"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>CollaboratorsModel</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+    age: 0,
+    cpf: &quot;&quot;,
+    dateOfBirth: undefined,
+    email: &quot;&quot;,
+    id: 0,
+    name: &quot;&quot;,
+    phone: &quot;&quot;,
+    sectorId: -1
+  }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/collaborators/add-collaborator/add-collaborator.component.ts:21</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sectorsList"></a>
+                        <span class="name">
+                            <b>
+                            sectorsList</b>
+                            <a href="#sectorsList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>SectorsModel[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/collaborators/add-collaborator/add-collaborator.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showErrorMessage"></a>
+                        <span class="name">
+                            <b>
+                            showErrorMessage</b>
+                            <a href="#showErrorMessage"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/collaborators/add-collaborator/add-collaborator.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="email"></a>
+                        <span class="name"><b>email</b><a href="#email"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>email()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="143" class="link-to-prism">src/app/collaborators/add-collaborator/add-collaborator.component.ts:143</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>getter function used to check if there are errors of validation on the e-mail provided</p>
+</div>
+
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cpf"></a>
+                        <span class="name"><b>cpf</b><a href="#cpf"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>cpf()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="150" class="link-to-prism">src/app/collaborators/add-collaborator/add-collaborator.component.ts:150</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>getter function used to check if the quantity of characters is correct and if there are only number characters on the cpf provided.</p>
+</div>
+
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="phone"></a>
+                        <span class="name"><b>phone</b><a href="#phone"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>phone()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="157" class="link-to-prism">src/app/collaborators/add-collaborator/add-collaborator.component.ts:157</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>getter function used to check if there are only number characters on the phone number provided.</p>
+</div>
+
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit, ViewChild} from &#x27;@angular/core&#x27;;
+import {FormControl, FormGroup, Validators, NgForm} from &quot;@angular/forms&quot;;
+import {CollaboratorsModel} from &quot;../collaborators.model&quot;;
+import {CollaboratorsService} from &quot;../collaborators.service&quot;;
+import {Router} from &quot;@angular/router&quot;;
+import {SectorsService} from &quot;../../sectors/sectors.service&quot;;
+import {SectorsModel} from &quot;../../sectors/sectors.model&quot;;
+
+/**
+ * Component for adding new collaborators
+ */
+@Component({
+  selector: &#x27;app-add-component&#x27;,
+  templateUrl: &#x27;./add-collaborator.component.html&#x27;,
+  styleUrls: [&#x27;./add-collaborator.component.scss&#x27;]
+})
+export class AddCollaboratorComponent implements OnInit {
+  form: FormGroup;
+  sectorsList: SectorsModel[] &#x3D; [];
+  showErrorMessage: boolean &#x3D; false;
+  newCollaborator: CollaboratorsModel &#x3D; {
+    age: 0,
+    cpf: &quot;&quot;,
+    dateOfBirth: undefined,
+    email: &quot;&quot;,
+    id: 0,
+    name: &quot;&quot;,
+    phone: &quot;&quot;,
+    sectorId: -1
+  }
+  @ViewChild(&#x27;f&#x27;) f &#x3D; NgForm;
+
+  constructor(private collaboratorService: CollaboratorsService, private sectorService: SectorsService, private router: Router) { }
+
+  //TODO format date
+  ngOnInit(): void {
+    this.subscribe();
+    this.initializeForm();
+  }
+
+  /**
+   * Initializes the reactive form with all inputs necessary to create a new collaborator and defines the Validators
+   */
+  initializeForm(){
+    this.form &#x3D; new FormGroup({
+      name: new FormControl(null, {
+        updateOn: &#x27;change&#x27;,
+        validators: [Validators.required]
+      }),
+      cpf: new FormControl(null, {
+        updateOn: &#x27;change&#x27;,
+        validators: [Validators.required, Validators.minLength(11), Validators.maxLength(11),  Validators.pattern(&quot;^[0-9]*$&quot;)],
+      }),
+      telephone: new FormControl(null, {
+        updateOn: &#x27;change&#x27;,
+        validators: [Validators.required, Validators.pattern(&quot;^[0-9]*$&quot;)]
+      }),
+      dateOfBirth: new FormControl(null, {
+        updateOn: &#x27;change&#x27;,
+        validators: [Validators.required]
+      }),
+      email: new FormControl(null, {
+        updateOn: &#x27;change&#x27;,
+        validators: [Validators.required, Validators.email]
+      }),
+      sectorId: new FormControl(1, {
+        updateOn: &#x27;change&#x27;,
+        validators: [Validators.required]
+      })
+    })
+  }
+
+  /**
+   * Method to create subscription to observable variables from SectorsService to always keep the data shown in the view up-to-date
+   */
+  subscribe(){
+    this.sectorsList &#x3D; this.sectorService.getAll();
+    this.sectorService.observableSectorsList.subscribe(sectors &#x3D;&gt; {
+      this.sectorsList &#x3D; sectors;
+    })
+  }
+
+  /**
+   * Method that sets the id of the chosen sector in the select menu as the value of the sectorId of the new collaborator. Method triggered by change event.
+   * @param data receives $event with all info on the formControl for the select menu
+   */
+  setSector(data){
+    this.newCollaborator.sectorId &#x3D; this.sectorsList[data.target.selectedIndex].id;
+  }
+
+  /**
+   * Method that checks if Collaborators API&#x27;s response indicates that the collaborator could not be added because they are in the blacklist.
+   */
+  isBlacklistMember(){
+    return false;
+  }
+
+  /**
+   * Method that checks if Collaborators API&#x27;s response indicates that the collaborator could not be added because their sector&#x27;s age range proportion limit.
+   */
+  isSectorFull(){
+     return false;
+  }
+
+  /**
+   * Method that checks if name field was filled out for field validation
+   */
+  isNameEmpty(){
+    return this.form.value.name &#x3D;&#x3D; &#x27;&#x27;;
+  }
+
+  /**
+   * Method that checks if cpf field was filled out for field validation
+   */
+  isCpfEmpty(){
+    return this.form.value.cpf &#x3D;&#x3D; &#x27;&#x27;;
+  }
+
+  /**
+   * Method that checks if email field was filled out for field validation
+   */
+  isEmailEmpty(){
+    return this.form.value.email &#x3D;&#x3D; &#x27;&#x27;;
+  }
+
+  /**
+   * Method that checks if phone field was filled out for field validation
+   */
+  isPhoneEmpty(){
+    return this.form.value.telephone &#x3D;&#x3D; &#x27;&#x27;;
+  }
+
+  /**
+   * Method that checks if date field was filled out for field validation
+   */
+  isDateEmpty(){
+    return this.form.value.dateOfBirth &#x3D;&#x3D; &#x27;&#x27;;
+  }
+
+  /**
+   * getter function used to check if there are errors of validation on the e-mail provided
+   */
+  get email() {
+    return this.form.get(&#x27;email&#x27;);
+  }
+
+  /**
+   * getter function used to check if the quantity of characters is correct and if there are only number characters on the cpf provided.
+   */
+  get cpf() {
+    return this.form.get(&#x27;cpf&#x27;);
+  }
+
+  /**
+   * getter function used to check if there are only number characters on the phone number provided.
+   */
+  get phone(){
+    return this.form.get(&#x27;telephone&#x27;);
+  }
+
+  /**
+   * Method triggered by the button &quot;Adicionar&quot; that further checks if form is valid. If it is, it calls the collaboratorsService to post the new Collaborator. If not, it sets a flag that will make visible an error message on the form.
+   */
+  onSubmit(){
+    if(this.form.status !&#x3D; &#x27;INVALID&#x27;){
+      this.newCollaborator.name &#x3D; this.form.value.name;
+      this.newCollaborator.cpf &#x3D; this.form.value.cpf;
+      this.newCollaborator.email &#x3D; this.form.value.email;
+      this.newCollaborator.dateOfBirth &#x3D; this.form.value.dateOfBirth;
+      this.newCollaborator.phone &#x3D; this.form.value.telephone;
+      this.newCollaborator.sectorId &#x3D; this.form.value.sectorId;
+      this.collaboratorService.post(this.newCollaborator)
+      this.router.navigate([&#x27;/collaborators&#x27;]);
+    }
+    else{
+      this.showErrorMessage &#x3D; true;
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid&quot;&gt;
+  &lt;app-navigation-option [path]&#x3D;&quot;&#x27;/collaborators&#x27;&quot;&gt;&lt;/app-navigation-option&gt;
+  &lt;h3&gt;Adicionar colaborador&lt;/h3&gt;
+  &lt;div class&#x3D;&quot;error-message&quot; *ngIf&#x3D;&quot;showErrorMessage&quot;&gt;Revise os campos abaixo, por favor! Alguma informação está
+    inválida!
+  &lt;/div&gt;
+  &lt;form [formGroup]&#x3D;&quot;form&quot; #f&#x3D;&quot;ngForm&quot;&gt;
+    &lt;label&gt;Nome&lt;/label&gt;
+    &lt;input class&#x3D;&quot;form-control&quot; [ngClass]&#x3D;&quot;{&#x27;invalid-answer&#x27;: isBlacklistMember() || isNameEmpty()}&quot; type&#x3D;&quot;text&quot;
+           formControlName&#x3D;&quot;name&quot;&gt;
+    &lt;div class&#x3D;&quot;error-message&quot; *ngIf&#x3D;&quot;isBlacklistMember()&quot;&gt;Essa pessoa está na Blacklist e não pode ser adicionada como
+      colaborx. :(
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;error-message&quot; *ngIf&#x3D;&quot;isNameEmpty()&quot;&gt;Esse campo é obrigatório!&lt;/div&gt;
+
+    &lt;label&gt;CPF&lt;/label&gt;
+    &lt;input class&#x3D;&quot;form-control&quot; [ngClass]&#x3D;&quot;{&#x27;invalid-answer&#x27;: isCpfEmpty()}&quot; type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;cpf&quot;&gt;
+    &lt;div class&#x3D;&quot;error-message&quot; *ngIf&#x3D;&quot;isCpfEmpty()&quot;&gt;Esse campo é obrigatório!&lt;/div&gt;
+    &lt;div class&#x3D;&quot;error-message&quot; *ngIf&#x3D;&quot;cpf.errors &amp;&amp; cpf.value&quot;&gt;CPF inválido&lt;/div&gt;
+
+    &lt;label&gt;E-mail&lt;/label&gt;
+    &lt;input class&#x3D;&quot;form-control&quot; [ngClass]&#x3D;&quot;{&#x27;invalid-answer&#x27;: isEmailEmpty() || email.errors?.email}&quot; type&#x3D;&quot;email&quot;
+           formControlName&#x3D;&quot;email&quot;&gt;
+    &lt;div class&#x3D;&quot;error-message&quot; *ngIf&#x3D;&quot;isEmailEmpty()&quot;&gt;Esse campo é obrigatório!&lt;/div&gt;
+    &lt;div class&#x3D;&quot;error-message&quot; *ngIf&#x3D;&quot;email.errors?.email&quot;&gt;E-mail inválido&lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;row justify-content-between&quot;&gt;
+      &lt;div class&#x3D;&quot;col-5&quot;&gt;
+        &lt;label&gt;Número de telefone&lt;/label&gt;
+        &lt;input class&#x3D;&quot;form-control&quot; [ngClass]&#x3D;&quot;{&#x27;invalid-answer&#x27;: isPhoneEmpty()}&quot; type&#x3D;&quot;tel&quot;
+               formControlName&#x3D;&quot;telephone&quot;&gt;
+        &lt;div class&#x3D;&quot;error-message&quot; *ngIf&#x3D;&quot;isPhoneEmpty()&quot;&gt;Esse campo é obrigatório!&lt;/div&gt;
+        &lt;div class&#x3D;&quot;error-message&quot; *ngIf&#x3D;&quot;phone.errors &amp;&amp; phone.value&quot;&gt;Informe um número de telefone válido&lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;col-5&quot;&gt;
+        &lt;label&gt;Data de Nascimento&lt;/label&gt;
+        &lt;input class&#x3D;&quot;form-control&quot; [ngClass]&#x3D;&quot;{&#x27;invalid-answer&#x27;: isDateEmpty()}&quot; type&#x3D;&quot;date&quot;
+               formControlName&#x3D;&quot;dateOfBirth&quot;&gt;
+        &lt;div class&#x3D;&quot;error-message&quot; *ngIf&#x3D;&quot;isDateEmpty()&quot;&gt;Esse campo é obrigatório!&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;label&gt;Setor&lt;/label&gt;
+    &lt;select class&#x3D;&quot;form-control&quot; [ngClass]&#x3D;&quot;{&#x27;invalid-answer&#x27;: isSectorFull()}&quot; formControlName&#x3D;&quot;sectorId&quot;
+            (change)&#x3D;&quot;setSector($event)&quot;&gt;
+      &lt;option *ngFor&#x3D;&quot;let sector of sectorsList&quot; [ngValue]&#x3D;&quot;sector.id&quot;&gt;{{sector.name}}&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;div class&#x3D;&quot;buttons-wrapper row justify-content-end&quot;&gt;
+      &lt;button class&#x3D;&quot;round-button grey col-2&quot; [routerLink]&#x3D;&quot;[&#x27;/collaborators&#x27;]&quot;&gt;Cancelar&lt;/button&gt;
+      &lt;button class&#x3D;&quot;round-button blue col-2&quot; (click)&#x3D;&quot;onSubmit()&quot;&gt;Adicionar&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./add-collaborator.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">h3{
+  margin-bottom: 3vh;
+}
+
+.form-group{
+  padding: 4vh 0px;
+}
+
+label{
+  margin-top: 2vh;
+}
+
+.buttons-wrapper{
+  margin-top: 4vh;
+  button{
+    margin-left: 2vh;
+  }
+  button.blue{
+    background-color: var(--lightBlue);
+  }
+  button.grey{
+    background-color: var(--dark);
+  }
+}
+
+.error-message{
+  color: var(--red);
+  font-family: Poppins-Regular, sans-serif;
+  font-size: 1.5vh;
+}
+
+.invalid-answer{
+  border: var(--red) 1px solid;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <app-navigation-option [path]="\'/collaborators\'"></app-navigation-option>  <h3>Adicionar colaborador</h3>  <div class="error-message" *ngIf="showErrorMessage">Revise os campos abaixo, por favor! Alguma informação está    inválida!  </div>  <form [formGroup]="form" #f="ngForm">    <label>Nome</label>    <input class="form-control" [ngClass]="{\'invalid-answer\': isBlacklistMember() || isNameEmpty()}" type="text"           formControlName="name">    <div class="error-message" *ngIf="isBlacklistMember()">Essa pessoa está na Blacklist e não pode ser adicionada como      colaborx. :(    </div>    <div class="error-message" *ngIf="isNameEmpty()">Esse campo é obrigatório!</div>    <label>CPF</label>    <input class="form-control" [ngClass]="{\'invalid-answer\': isCpfEmpty()}" type="text" formControlName="cpf">    <div class="error-message" *ngIf="isCpfEmpty()">Esse campo é obrigatório!</div>    <div class="error-message" *ngIf="cpf.errors && cpf.value">CPF inválido</div>    <label>E-mail</label>    <input class="form-control" [ngClass]="{\'invalid-answer\': isEmailEmpty() || email.errors?.email}" type="email"           formControlName="email">    <div class="error-message" *ngIf="isEmailEmpty()">Esse campo é obrigatório!</div>    <div class="error-message" *ngIf="email.errors?.email">E-mail inválido</div>    <div class="row justify-content-between">      <div class="col-5">        <label>Número de telefone</label>        <input class="form-control" [ngClass]="{\'invalid-answer\': isPhoneEmpty()}" type="tel"               formControlName="telephone">        <div class="error-message" *ngIf="isPhoneEmpty()">Esse campo é obrigatório!</div>        <div class="error-message" *ngIf="phone.errors && phone.value">Informe um número de telefone válido</div>      </div>      <div class="col-5">        <label>Data de Nascimento</label>        <input class="form-control" [ngClass]="{\'invalid-answer\': isDateEmpty()}" type="date"               formControlName="dateOfBirth">        <div class="error-message" *ngIf="isDateEmpty()">Esse campo é obrigatório!</div>      </div>    </div>    <label>Setor</label>    <select class="form-control" [ngClass]="{\'invalid-answer\': isSectorFull()}" formControlName="sectorId"            (change)="setSector($event)">      <option *ngFor="let sector of sectorsList" [ngValue]="sector.id">{{sector.name}}</option>    </select>    <div class="buttons-wrapper row justify-content-end">      <button class="round-button grey col-2" [routerLink]="[\'/collaborators\']">Cancelar</button>      <button class="round-button blue col-2" (click)="onSubmit()">Adicionar</button>    </div>  </form></div></div>'
+    var COMPONENTS = [{'name': 'AddCollaboratorComponent', 'selector': 'app-add-component'},{'name': 'AddSectorComponent', 'selector': 'app-add-sector'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CollaboratorsComponent', 'selector': 'app-collaborators'},{'name': 'CustomCollaboratorsListComponent', 'selector': 'app-custom-collaborators-list'},{'name': 'CustomSectorsListComponent', 'selector': 'app-custom-sectors-list'},{'name': 'EditCollaboratorComponent', 'selector': 'app-edit-collaborator'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'NavigationOptionComponent', 'selector': 'app-navigation-option'},{'name': 'SectorsComponent', 'selector': 'app-sectors'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AddCollaboratorComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AddCollaboratorComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

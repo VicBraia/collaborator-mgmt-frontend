@@ -7,6 +7,9 @@ import {DatePipe} from '@angular/common'
 import {SectorsModel} from "../../sectors/sectors.model";
 import {SectorsService} from "../../sectors/sectors.service";
 
+/**
+ * Component for editing a collaborator
+ */
 @Component({
   selector: 'app-edit-collaborator',
   templateUrl: './edit-collaborator.component.html',
@@ -32,12 +35,14 @@ export class EditCollaboratorComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private collaboratorsService: CollaboratorsService, private sectorService: SectorsService) { }
 
   //TODO pre-fill date of birth
-  //TODO validate fields
   ngOnInit(): void {
     this.subscribe();
     this.initializeForm();
   }
 
+  /**
+   * Method to create subscription to observable variables from SectorsService and collaboratorsService to always keep the data shown in the view up-to-date
+   */
   subscribe(){
     this.sub = this.route.params.subscribe(params => {
       this.id = +params['id'];
@@ -49,6 +54,9 @@ export class EditCollaboratorComponent implements OnInit {
     })
   }
 
+  /**
+   * Initializes the reactive form with all inputs necessary to edit a  collaborator, defines the Validators and prefills the fields with the collaborator's data.
+   */
   initializeForm(){
     let dp = new DatePipe('pt');
     this.form = new FormGroup({
@@ -79,50 +87,73 @@ export class EditCollaboratorComponent implements OnInit {
     })
   }
 
+  /**
+   * Method that sets the id of the chosen sector in the select menu as the value of the sectorId of the new collaborator. Method triggered by change event.
+   * @param data receives $event with all info on the formControl for the select menu
+   */
   setSector(data){
     this.collaborator.sectorId = this.sectorsList[data.target.selectedIndex].id;
   }
 
-  isBlacklistMember(){
-    return false;
-  }
-
-  isSectorFull(){
-    return false;
-  }
-
+  /**
+   * Method that checks if name field was filled out for field validation
+   */
   isNameEmpty(){
     return this.form.value.name == '';
   }
 
+  /**
+   * Method that checks if cpf field was filled out for field validation
+   */
   isCpfEmpty(){
     return this.form.value.cpf == '';
   }
 
+  /**
+   * Method that checks if email field was filled out for field validation
+   */
   isEmailEmpty(){
     return this.form.value.email == '';
   }
 
+  /**
+   * Method that checks if phone field was filled out for field validation
+   */
   isPhoneEmpty(){
     return this.form.value.telephone == '';
   }
 
+  /**
+   * Method that checks if date field was filled out for field validation
+   */
   isDateEmpty(){
     return this.form.value.dateOfBirth == '';
   }
 
+  /**
+   * getter function used to check if there are errors of validation on the e-mail provided
+   */
   get email() {
     return this.form.get('email');
   }
 
+  /**
+   * getter function used to check if the quantity of characters is correct and if there are only number characters on the cpf provided.
+   */
   get cpf() {
     return this.form.get('cpf');
   }
 
+  /**
+   * getter function used to check if there are only number characters on the phone number provided.
+   */
   get phone(){
     return this.form.get('telephone');
   }
 
+  /**
+   * Method triggered by the button "Conluir" that further checks if form is valid. If it is, it calls the collaboratorsService to put the new Collaborator. If not, it sets a flag that will make visible an error message on the form.
+   */
   onSubmit(){
     if(this.form.status != 'INVALID'){
       this.collaborator.name = this.form.value.name;

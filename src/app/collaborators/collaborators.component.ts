@@ -5,6 +5,9 @@ import {Router} from "@angular/router";
 import {SectorsModel} from "../sectors/sectors.model";
 import {SectorsService} from "../sectors/sectors.service";
 
+/**
+ * Component for the layout of the  page where the list of collaborators can be seen
+ */
 @Component({
   selector: 'app-collaborators',
   templateUrl: './collaborators.component.html',
@@ -18,30 +21,48 @@ export class CollaboratorsComponent implements OnInit {
   constructor(private collaboratorService: CollaboratorsService, private sectorsService: SectorsService, private router: Router) {
   }
 
+  /**
+   * Initiates Collaborators and Sectors Lists
+   */
   ngOnInit(): void {
+    this.collaboratorsList = this.collaboratorService.getAll();
+    this.sectorsList = this.sectorsService.getAll();
+    this.filteredCollaboratorsList = this.collaboratorsList;
     this.subscribeVariables();
   }
 
+  /**
+   * Method that creates subscription to observable variables from SectorsService and CollaboratorsService to always keep the data shown in the view up-to-date
+   */
   subscribeVariables(){
-    this.collaboratorsList = this.collaboratorService.getAll();
-    this.filteredCollaboratorsList = this.collaboratorsList;
     this.collaboratorService.observableCollaboratorsList.subscribe(collaborators => {
       this.collaboratorsList = collaborators;
     });
-    this.sectorsList = this.sectorsService.getAll();
     this.sectorsService.observableSectorsList.subscribe(sectors => {
       this.sectorsList = sectors;
     });
   }
 
+  /**
+   * Method that redirects user to a provided path
+   * @param path
+   */
   redirectTo(path) {
     this.router.navigate([path]);
   }
 
+  /**
+   * Method triggered by clicking on the delete button of a collaborator. It calls the CollaboratorsService to perfom the deletion.
+   * @param collaboratorId Id of the collaborator to be deleted
+   */
   onDeleteCollaborator(collaboratorId) {
     this.collaboratorService.delete(collaboratorId);
   }
 
+  /**
+   * Method that filters all collaborators by name, cpf, email or sector
+   * @param data Characters typed to the sesrch bar
+   */
   searchThis(data) {
     this.filteredCollaboratorsList = this.collaboratorsList;
     if (data) {
